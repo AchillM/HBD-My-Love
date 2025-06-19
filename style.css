@@ -5,36 +5,34 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ffe0ec, #e0c3fc);
-  color: #333;
-  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to top, #ffe0ec, #d0cfff);
   min-height: 100vh;
-  padding: 20px;
+  text-align: center;
+  overflow-x: hidden;
+  color: #333;
 }
 
 .container {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
+  position: relative;
+  padding: 30px 20px;
+  z-index: 10;
 }
 
 button {
   padding: 15px 25px;
-  font-size: 1.1rem;
-  background-color: #ff4d6d;
-  color: white;
+  font-size: 1.2rem;
+  background: #ff69b4;
+  color: #fff;
   border: none;
-  border-radius: 12px;
+  border-radius: 15px;
   cursor: pointer;
   margin-top: 20px;
   transition: background 0.3s ease;
-  width: 90%;
-  max-width: 300px;
 }
 
 button:hover {
-  background-color: #ff3366;
+  background: #ff1493;
 }
 
 .hidden {
@@ -43,45 +41,75 @@ button:hover {
 
 #messageBox, #gallery {
   margin-top: 30px;
-  animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 1s ease;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
 }
 
 .photos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 15px;
 }
 
 .photos img {
   width: 100%;
   max-width: 160px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
 .photos img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
-h1 {
-  font-size: 1.8rem;
-  color: #d63384;
+/* Animasi ketik */
+#typedText {
+  font-size: 1.6rem;
+  white-space: pre-line;
+  min-height: 100px;
 }
 
-h2 {
+/* ❤️ Hati jatuh */
+.background-decor .hearts::before {
+  content: "💖 💕 💗 💞 💘";
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   font-size: 1.5rem;
-  margin-top: 15px;
+  animation: heartsFall 10s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
 }
 
-p {
-  font-size: 1rem;
-  margin-top: 10px;
+@keyframes heartsFall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* 🎈 Balon terbang */
+.balloons::before {
+  content: "🎈 🎈 🎈 🎈 🎈";
+  position: fixed;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  font-size: 2rem;
+  animation: balloonsUp 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes balloonsUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120vh); }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
