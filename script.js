@@ -1,16 +1,29 @@
-const greeting = document.getElementById("greeting");
+const startBtn = document.getElementById("startBtn");
+const messageBox = document.getElementById("messageBox");
+const nextBtn = document.getElementById("nextBtn");
+const gallery = document.getElementById("gallery");
+const greetingText = document.getElementById("greetingText");
 
-const now = new Date();
-const jam = now.getHours();
+startBtn.addEventListener("click", () => {
+  startBtn.classList.add("hidden");
+  messageBox.classList.remove("hidden");
 
-let ucapan = "";
+  const now = new Date();
+  const hour = now.getHours();
+  let greeting = "";
 
-if (jam < 12) {
-  ucapan = "Semoga harimu secerah pagi ini!";
-} else if (jam < 18) {
-  ucapan = "Semoga ulang tahunmu penuh kebahagiaan!";
-} else {
-  ucapan = "Selamat malam, semoga impianmu terwujud!";
-}
+  if (hour < 12) {
+    greeting = "Semoga harimu seindah pagi yang cerah ini 🌞";
+  } else if (hour < 18) {
+    greeting = "Semoga hari ulang tahunmu penuh kebahagiaan! 🎊";
+  } else {
+    greeting = "Selamat malam, semoga semua impianmu tercapai 🌙✨";
+  }
 
-greeting.textContent = ucapan;
+  greetingText.textContent = greeting;
+});
+
+nextBtn.addEventListener("click", () => {
+  messageBox.classList.add("hidden");
+  gallery.classList.remove("hidden");
+});
