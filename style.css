@@ -220,14 +220,12 @@ body {
 }
 
 .album-foto {
-  position: relative;
-  background-image: url('https://imgur.com/a/7pVHMm0');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  border-radius: 20px;
-  overflow: hidden;
+  background-image: url('https://imgur.com/a/7pVHMm0');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%
 }
 
 .overlay-text {
@@ -255,6 +253,9 @@ body {
 
 /* Responsif untuk mobile */
 @media (max-width: 600px) {
+    .album-foto {
+    height: 250px;
+    background-size: cover;
   .overlay {
     padding: 40px 20px;
   }
