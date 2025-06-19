@@ -3,28 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ucapan Ulang Tahun</title>
+  <title>🎉 Ulang Tahun Spesial 🎉</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background-decor">
+    <div class="hearts"></div>
+    <div class="balloons"></div>
+  </div>
+
   <div class="container">
     <button id="startBtn">🎁 Buka Ucapan</button>
 
     <div id="messageBox" class="hidden">
-      <h1>Selamat Ulang Tahun, [Nama]! 🎉</h1>
-      <p id="greetingText"></p>
-      <button id="nextBtn">📷 Lihat Album Foto</button>
+      <h1 id="typedText"></h1>
+      <button id="nextBtn">📸 Lihat Foto</button>
     </div>
 
     <div id="gallery" class="hidden">
-      <h2>Kenangan Indah Kita 💖</h2>
+      <h2>Kenangan Manis 💕</h2>
       <div class="photos">
         <img src="foto1.jpg" alt="Foto 1" />
         <img src="foto2.jpg" alt="Foto 2" />
         <img src="foto3.jpg" alt="Foto 3" />
+        <!-- Tambah foto lainnya -->
       </div>
     </div>
   </div>
+
+  <!-- Opsional musik -->
+  <!-- <audio id="bgMusic" src="lagu.mp3" loop autoplay></audio> -->
 
   <script src="script.js"></script>
 </body>
