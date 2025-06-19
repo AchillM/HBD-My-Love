@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selamat Ulang Tahun!</title>
+  <title>Ucapan Ulang Tahun</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🎂 Selamat Ulang Tahun, [Nama]! 🎉</h1>
-    <p id="greeting"></p>
+    <button id="startBtn">🎁 Buka Ucapan</button>
 
-    <div class="gallery">
-      <img src="foto1.jpg" alt="Foto 1" />
-      <img src="foto2.jpg" alt="Foto 2" />
-      <img src="foto3.jpg" alt="Foto 3" />
-      <!-- Tambah foto lainnya -->
+    <div id="messageBox" class="hidden">
+      <h1>Selamat Ulang Tahun, [Nama]! 🎉</h1>
+      <p id="greetingText"></p>
+      <button id="nextBtn">📷 Lihat Album Foto</button>
+    </div>
+
+    <div id="gallery" class="hidden">
+      <h2>Kenangan Indah Kita 💖</h2>
+      <div class="photos">
+        <img src="foto1.jpg" alt="Foto 1" />
+        <img src="foto2.jpg" alt="Foto 2" />
+        <img src="foto3.jpg" alt="Foto 3" />
+      </div>
     </div>
   </div>
 
