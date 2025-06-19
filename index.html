@@ -2,37 +2,40 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎉 Ulang Tahun Spesial 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ucapan & Album</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background-decor">
-    <div class="hearts"></div>
-    <div class="balloons"></div>
-  </div>
 
-  <div class="container">
-    <button id="startBtn">🎁 Buka Ucapan</button>
+  <!-- Section 1: Opening -->
+  <section class="section opening show" id="section1">
+    <h1>Selamat Datang di Halaman Ucapan</h1>
+    <button class="btn-open" onclick="bukaUcapan()">Buka Ucapan</button>
+  </section>
 
-    <div id="messageBox" class="hidden">
-      <h1 id="typedText"></h1>
-      <button id="nextBtn">📸 Lihat Foto</button>
+  <!-- Section 2: Ucapan dengan Tirai -->
+  <section class="section curtain" id="section2">
+    <div class="curtain-left" id="leftCurtain"></div>
+    <div class="curtain-right" id="rightCurtain"></div>
+    <div class="ucapan-content" id="ucapanText">
+      <h2>Semoga Harimu Menyenangkan dan Penuh Kebahagiaan!</h2>
+      <button class="btn-next" onclick="keAlbum()">Lihat Album Foto</button>
     </div>
+  </section>
 
-    <div id="gallery" class="hidden">
-      <h2>Kenangan Manis 💕</h2>
-      <div class="photos">
-        <img src="foto1.jpg" alt="Foto 1" />
-        <img src="foto2.jpg" alt="Foto 2" />
-        <img src="foto3.jpg" alt="Foto 3" />
-        <!-- Tambah foto lainnya -->
+  <!-- Section 3: Album Foto -->
+  <section class="section album" id="section3">
+    <h2>Kenangan Indah</h2>
+    <div class="slider">
+      <div class="slides" id="slides">
+        <img src="https://picsum.photos/id/1015/600/400" alt="Foto 1" />
+        <img src="https://picsum.photos/id/1025/600/400" alt="Foto 2" />
+        <img src="https://picsum.photos/id/1035/600/400" alt="Foto 3" />
       </div>
+      <div class="decorations"></div>
     </div>
-  </div>
-
-  <!-- Opsional musik -->
-  <!-- <audio id="bgMusic" src="lagu.mp3" loop autoplay></audio> -->
+  </section>
 
   <script src="script.js"></script>
 </body>
