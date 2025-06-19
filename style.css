@@ -179,7 +179,9 @@ body {
 
 /* Dekorasi */
 .decorations {
-  background-image: url('https://github.com/AchillM/HBD-My-Love/blob/main/IMG-20250511-WA0024.jpg');
+  background-image: url('<!-- di index.html -->
+<img src="Happy Birthday Photo Collage Polaroid Frame Your Story_20250617_113549_0000.png" alt="Gambar Ulang Tahun" width="300">
+');
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
