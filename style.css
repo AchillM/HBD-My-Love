@@ -219,6 +219,28 @@ body {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
+.album-foto {
+  position: relative;
+  background-image: url('https://i.imgur.com/S7TZFUG.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+}
+
 /* Animasi Fade In */
 @keyframes fadeIn {
   from {
