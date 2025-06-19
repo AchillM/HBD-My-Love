@@ -232,21 +232,15 @@ body {
 }
 
 .btn-link {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #ff4081;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #ff69b4;
+  border: 3px solid white;
   color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.btn-link:hover {
-  background-color: #e73370;
-  transform: scale(1.05);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff1493;
+  animation: pulse 2s infinite;
 }
 
 
