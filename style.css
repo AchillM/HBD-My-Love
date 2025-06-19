@@ -1,115 +1,182 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(to top, #ffe0ec, #d0cfff);
-  min-height: 100vh;
-  text-align: center;
   overflow-x: hidden;
-  color: #333;
+  background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
 }
 
-.container {
-  position: relative;
-  padding: 30px 20px;
-  z-index: 10;
+.section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
 }
 
-button {
-  padding: 15px 25px;
+.show {
+  display: flex !important;
+}
+
+/* Opening */
+.opening {
+  background: url('https://www.transparenttextures.com/patterns/flower.png');
+  animation: fadeIn 2s ease-in-out;
+}
+
+.opening h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 40px;
+  animation: slideDown 1s ease-in-out;
+}
+
+.btn-open {
+  padding: 15px 30px;
   font-size: 1.2rem;
   background: #ff69b4;
-  color: #fff;
   border: none;
-  border-radius: 15px;
+  color: white;
+  border-radius: 30px;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
 }
 
-button:hover {
+.btn-open:hover {
   background: #ff1493;
 }
 
-.hidden {
-  display: none;
+/* Curtain Section */
+.curtain {
+  position: relative;
+  background: #fdf6f0;
+  overflow: hidden;
 }
 
-#messageBox, #gallery {
+.curtain-left, .curtain-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #d63384, #c2185b);
+  z-index: 2;
+}
+
+.curtain-left {
+  left: 0;
+  border-right: 2px solid white;
+}
+
+.curtain-right {
+  right: 0;
+  border-left: 2px solid white;
+}
+
+.ucapan-content {
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.ucapan-content h2 {
+  font-size: 2rem;
+  color: #c2185b;
+  margin-bottom: 20px;
+}
+
+.btn-next {
   margin-top: 30px;
-  animation: fadeIn 1s ease;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-h1, h2 {
-  margin-bottom: 15px;
+/* Album */
+.album {
+  background: #fff;
+  flex-direction: column;
 }
 
-.photos {
+.album h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  animation: fadeInUp 1s;
+}
+
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  overflow: hidden;
+  border: 5px solid #e91e63;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.slides {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  transition: transform 0.5s ease;
 }
 
-.photos img {
+.slides img {
   width: 100%;
-  max-width: 160px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
-.photos img:hover {
-  transform: scale(1.07);
-}
-
-/* Animasi ketik */
-#typedText {
-  font-size: 1.6rem;
-  white-space: pre-line;
-  min-height: 100px;
-}
-
-/* ❤️ Hati jatuh */
-.background-decor .hearts::before {
-  content: "💖 💕 💗 💞 💘";
-  position: fixed;
-  width: 100%;
+.decorations {
+  position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.5rem;
-  animation: heartsFall 10s linear infinite;
-  z-index: 0;
-  opacity: 0.6;
-}
-
-@keyframes heartsFall {
-  0% { transform: translateY(-100px); }
-  100% { transform: translateY(100vh); }
-}
-
-/* 🎈 Balon terbang */
-.balloons::before {
-  content: "🎈 🎈 🎈 🎈 🎈";
-  position: fixed;
-  bottom: -50px;
-  left: 0;
   width: 100%;
-  font-size: 2rem;
-  animation: balloonsUp 12s linear infinite;
-  z-index: 0;
+  height: 100%;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
 }
 
-@keyframes balloonsUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-120vh); }
+/* Animations */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .opening h1, .ucapan-content h2, .album h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-open, .btn-next {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }
