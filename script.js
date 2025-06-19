@@ -1,42 +1,31 @@
-const startBtn = document.getElementById("startBtn");
-const messageBox = document.getElementById("messageBox");
-const nextBtn = document.getElementById("nextBtn");
-const gallery = document.getElementById("gallery");
-const typedText = document.getElementById("typedText");
-// const bgMusic = document.getElementById("bgMusic"); // Optional music
+function bukaUcapan() {
+  document.getElementById('section1').classList.remove('show');
+  document.getElementById('section2').classList.add('show');
 
-const messages = [
-  "Selamat ulang tahun ya! 🎉",
-  "Semoga selalu bahagia, sehat, dan sukses 🌟",
-  "Terima kasih sudah menjadi bagian penting dalam hidup ini 💖",
-  "Hari ini spesial karena kamu sangat berarti 🎂✨"
-];
+  // Tirai animasi
+  document.getElementById('leftCurtain').style.transition = '1s';
+  document.getElementById('rightCurtain').style.transition = '1s';
+  document.getElementById('leftCurtain').style.transform = 'translateX(-100%)';
+  document.getElementById('rightCurtain').style.transform = 'translateX(100%)';
 
-let i = 0, j = 0, currentText = '';
-
-function typeMessage() {
-  if (i < messages.length) {
-    currentText = messages[i];
-    if (j <= currentText.length) {
-      typedText.textContent = currentText.slice(0, j++);
-      setTimeout(typeMessage, 50);
-    } else {
-      i++;
-      j = 0;
-      setTimeout(typeMessage, 800); // jeda antar kalimat
-    }
-  }
+  setTimeout(() => {
+    document.getElementById('ucapanText').style.opacity = 1;
+  }, 1000);
 }
 
-startBtn.addEventListener("click", () => {
-  startBtn.classList.add("hidden");
-  messageBox.classList.remove("hidden");
-  typeMessage();
+function keAlbum() {
+  document.getElementById('section2').classList.remove('show');
+  document.getElementById('section3').classList.add('show');
 
-  // bgMusic.play(); // opsional: aktifkan musik
-});
+  // Start slide show
+  startSlider();
+}
 
-nextBtn.addEventListener("click", () => {
-  messageBox.classList.add("hidden");
-  gallery.classList.remove("hidden");
-});
+let index = 0;
+function startSlider() {
+  const slides = document.getElementById('slides');
+  setInterval(() => {
+    index = (index + 1) % 3;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000);
+}
