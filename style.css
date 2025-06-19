@@ -1,37 +1,87 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg, #ffe2e2, #ffc6ff);
+  background: linear-gradient(to right, #ffe0ec, #e0c3fc);
   color: #333;
   text-align: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
-  padding: 50px 20px;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 2.5em;
-  color: #ff4d6d;
+button {
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+  width: 90%;
+  max-width: 300px;
 }
 
-.gallery {
+button:hover {
+  background-color: #ff3366;
+}
+
+.hidden {
+  display: none;
+}
+
+#messageBox, #gallery {
+  margin-top: 30px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.photos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.gallery img {
-  width: 200px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.photos img {
+  width: 100%;
+  max-width: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
+.photos img:hover {
   transform: scale(1.05);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #d63384;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
