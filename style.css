@@ -187,13 +187,13 @@ body {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* efek gelap supaya teks kelihatan */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background-image: url('https://imgur.com/a/7pVHMm0'); /* ganti sesuai path gambar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+  color: white;
+  border-radius: 15px;
 }
 
 h1 {
