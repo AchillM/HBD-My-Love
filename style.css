@@ -54,10 +54,10 @@ body {
   background: #ff1493;
 }
 
-/* Curtain Section */
+/* Curtain */
 .curtain {
   position: relative;
-  background: #fdf6f0;
+  background: #fff0f5;
   overflow: hidden;
 }
 
@@ -107,7 +107,7 @@ body {
 /* Album */
 .album {
   background: #fff;
-  flex-direction: column;
+  position: relative;
 }
 
 .album h2 {
@@ -117,37 +117,70 @@ body {
   animation: fadeInUp 1s;
 }
 
-.slider {
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  max-width: 700px;
+  width: 100%;
+}
+
+.slider {
+  overflow: hidden;
+  border-radius: 15px;
   width: 90%;
   max-width: 600px;
-  overflow: hidden;
-  border: 5px solid #e91e63;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slides img {
   width: 100%;
   flex-shrink: 0;
+  border-radius: 10px;
+  animation: fadeSlide 0.5s ease;
 }
 
+.nav {
+  background: #e91e63;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 10px;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.nav:hover {
+  background: #c2185b;
+}
+
+/* Dekorasi */
 .decorations {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.2;
 }
 
 /* Animations */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @keyframes slideDown {
   from { transform: translateY(-50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -178,5 +211,10 @@ body {
   .btn-open, .btn-next {
     font-size: 1rem;
     padding: 10px 20px;
+  }
+
+  .nav {
+    font-size: 1.5rem;
+    padding: 8px;
   }
 }
