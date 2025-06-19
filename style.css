@@ -219,14 +219,6 @@ body {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-.album-foto {
-  background-image: url('https://imgur.com/a/7pVHMm0');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  width: 100%
-}
 
 .overlay-text {
   position: absolute;
@@ -253,13 +245,6 @@ body {
 
 /* Responsif untuk mobile */
 @media (max-width: 600px) {
-    .album-foto {
-    height: 250px;
-    background-size: cover;
-  .overlay {
-    padding: 40px 20px;
-  }
-
   .overlay h1 {
     font-size: 2rem;
   }
